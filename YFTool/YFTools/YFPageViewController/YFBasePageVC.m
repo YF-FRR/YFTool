@@ -21,7 +21,7 @@
     [self.view addSubview:lab];
     lab.center = self.view.center;
     lab.adjustsFontSizeToFitWidth = YES;
-    lab.text = [NSString stringWithFormat:@"第 %ld 个界面",self.index + 1];
+    lab.text = [NSString stringWithFormat:@"第 %ld 个界面",(long)(self.index + 1)];
     
     self.view.backgroundColor = [UIColor colorWithRed:(arc4random()%256 /255.0) green:(arc4random()%256 /255.0) blue:(arc4random()%256/255.0) alpha:1.0];
 }

@@ -67,7 +67,7 @@ inline static BOOL isRetinaFilePath(NSString *path)
 @property (nonatomic, readwrite) NSTimeInterval totalDuration;
 @property (nonatomic, readwrite) NSUInteger loopCount;
 @property (nonatomic, readwrite) CGImageSourceRef incrementalSource;
-
+@property(nonatomic,assign)CGImageSourceRef imageSourceRef;
 @end
 
 static NSUInteger _prefetchedNum = 10;
@@ -75,7 +75,7 @@ static NSUInteger _prefetchedNum = 10;
 @implementation YLGIFImage
 {
     dispatch_queue_t readFrameQueue;
-    CGImageSourceRef _imageSourceRef;
+//    CGImageSourceRef _imageSourceRef;
     CGFloat _scale;
 }
 
@@ -228,18 +228,20 @@ static NSUInteger _prefetchedNum = 10;
         if(idx != 0) {
             [self.images replaceObjectAtIndex:idx withObject:[NSNull null]];
         }
+         __weak typeof(self) weakSelf=self;
         NSUInteger nextReadIdx = (idx + _prefetchedNum);
         for(NSUInteger i=idx+1; i<=nextReadIdx; i++) {
             NSUInteger _idx = i%self.images.count;
+            CGFloat scale = _scale;
             if([self.images[_idx] isKindOfClass:[NSNull class]]) {
                 dispatch_async(readFrameQueue, ^{
-                    CGImageRef image = CGImageSourceCreateImageAtIndex(_imageSourceRef, _idx, NULL);
-                    @synchronized(self.images) {
+                    CGImageRef image = CGImageSourceCreateImageAtIndex(weakSelf.imageSourceRef, _idx, NULL);
+                    @synchronized(weakSelf.images) {
                         if (image != NULL) {
-                            [self.images replaceObjectAtIndex:_idx withObject:[UIImage imageWithCGImage:image scale:_scale orientation:UIImageOrientationUp]];
+                            [weakSelf.images replaceObjectAtIndex:_idx withObject:[UIImage imageWithCGImage:image scale:scale orientation:UIImageOrientationUp]];
                             CFRelease(image);
                         } else {
-                            [self.images replaceObjectAtIndex:_idx withObject:[NSNull null]];
+                            [weakSelf.images replaceObjectAtIndex:_idx withObject:[NSNull null]];
                         }
                     }
                 });

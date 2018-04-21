@@ -112,11 +112,12 @@
     if (self.showIndicatorLineView) {
         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
         CGPoint center = CGPointMake(cell.center.x , cell.height - IndicatorLineH);
+         __weak typeof(self) weakSelf=self;
         [UIView animateWithDuration:0.25 animations:^{
-            if (_indicatorLineAutoWidth) {
-                _indicatroLineView.width = cell.width * 0.8;
+            if (weakSelf.indicatorLineAutoWidth) {
+                weakSelf.indicatroLineView.width = cell.width * 0.8;
             }
-            _indicatroLineView.center = center;
+            weakSelf.indicatroLineView.center = center;
         }];
     }
 
