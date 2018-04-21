@@ -22,9 +22,9 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string></string>
+		<string>YFProgressHUD</string>
 		<key>VC</key>
-		<string></string>
+		<string>YFProgressHUDVC</string>
 	</dict>
 </array>
 </plist>
