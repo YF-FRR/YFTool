@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 
-s.name         = "YFTools"
+s.name         = "YFPersonalTools"
 s.version      = "0.0.1"
 s.summary      = "分装一些常用的工具和UI控件"
 
