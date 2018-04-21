@@ -10,15 +10,15 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string></string>
+		<string>YFPageViewController</string>
 		<key>VC</key>
-		<string></string>
+		<string>YFPageViewControllerVC</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string></string>
+		<string>YFIndexIndicatorView</string>
 		<key>VC</key>
-		<string></string>
+		<string>YFPageViewControllerVC</string>
 	</dict>
 	<dict>
 		<key>Title</key>

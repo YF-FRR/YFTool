@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59549FC1208AC9C000BC1594 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 59549FBF208AC9C000BC1594 /* UIView+Extension.m */; };
+		59796980208B0F27003E07E6 /* YFIndexIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5979697D208B0F27003E07E6 /* YFIndexIndicatorView.m */; };
+		59796981208B0F27003E07E6 /* IndexIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5979697F208B0F27003E07E6 /* IndexIndicatorCell.m */; };
+		59796986208B0F76003E07E6 /* YFBasePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 59796983208B0F76003E07E6 /* YFBasePageVC.m */; };
+		59796987208B0F76003E07E6 /* YFPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59796984208B0F76003E07E6 /* YFPageViewController.m */; };
+		5979698A208B0FBB003E07E6 /* YFPageViewControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 59796989208B0FBB003E07E6 /* YFPageViewControllerVC.m */; };
 		59A32652208997C10007EF26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A32651208997C10007EF26 /* AppDelegate.m */; };
 		59A32655208997C10007EF26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A32654208997C10007EF26 /* ViewController.m */; };
 		59A32658208997C10007EF26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A32656208997C10007EF26 /* Main.storyboard */; };
@@ -22,6 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59549FBF208AC9C000BC1594 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		59549FC0208AC9C000BC1594 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		5979697C208B0F27003E07E6 /* IndexIndicatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexIndicatorCell.h; sourceTree = "<group>"; };
+		5979697D208B0F27003E07E6 /* YFIndexIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFIndexIndicatorView.m; sourceTree = "<group>"; };
+		5979697E208B0F27003E07E6 /* YFIndexIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFIndexIndicatorView.h; sourceTree = "<group>"; };
+		5979697F208B0F27003E07E6 /* IndexIndicatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexIndicatorCell.m; sourceTree = "<group>"; };
+		59796982208B0F76003E07E6 /* YFBasePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFBasePageVC.h; sourceTree = "<group>"; };
+		59796983208B0F76003E07E6 /* YFBasePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFBasePageVC.m; sourceTree = "<group>"; };
+		59796984208B0F76003E07E6 /* YFPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPageViewController.m; sourceTree = "<group>"; };
+		59796985208B0F76003E07E6 /* YFPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPageViewController.h; sourceTree = "<group>"; };
+		59796988208B0FBB003E07E6 /* YFPageViewControllerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFPageViewControllerVC.h; sourceTree = "<group>"; };
+		59796989208B0FBB003E07E6 /* YFPageViewControllerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFPageViewControllerVC.m; sourceTree = "<group>"; };
 		59A3264D208997C10007EF26 /* YFTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A32650208997C10007EF26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59A32651208997C10007EF26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,6 +94,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		59549FB5208AC83B00BC1594 /* YFPageViewControllerVC */ = {
+			isa = PBXGroup;
+			children = (
+				59796988208B0FBB003E07E6 /* YFPageViewControllerVC.h */,
+				59796989208B0FBB003E07E6 /* YFPageViewControllerVC.m */,
+			);
+			path = YFPageViewControllerVC;
+			sourceTree = "<group>";
+		};
+		59549FB7208AC86D00BC1594 /* YFPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				59796982208B0F76003E07E6 /* YFBasePageVC.h */,
+				59796983208B0F76003E07E6 /* YFBasePageVC.m */,
+				59796985208B0F76003E07E6 /* YFPageViewController.h */,
+				59796984208B0F76003E07E6 /* YFPageViewController.m */,
+			);
+			path = YFPageViewController;
+			sourceTree = "<group>";
+		};
+		59549FB8208AC8E100BC1594 /* YFIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				5979697C208B0F27003E07E6 /* IndexIndicatorCell.h */,
+				5979697F208B0F27003E07E6 /* IndexIndicatorCell.m */,
+				5979697E208B0F27003E07E6 /* YFIndexIndicatorView.h */,
+				5979697D208B0F27003E07E6 /* YFIndexIndicatorView.m */,
+			);
+			path = YFIndicatorView;
+			sourceTree = "<group>";
+		};
+		59549FC2208AC9EA00BC1594 /* UIView+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				59549FC0208AC9C000BC1594 /* UIView+Extension.h */,
+				59549FBF208AC9C000BC1594 /* UIView+Extension.m */,
+			);
+			path = "UIView+Extension";
+			sourceTree = "<group>";
+		};
 		59A32644208997C10007EF26 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				59A3266E20899BA50007EF26 /* YFCollectionViewAutoFlowLayoutVC */,
+				59549FB5208AC83B00BC1594 /* YFPageViewControllerVC */,
 				59A32650208997C10007EF26 /* AppDelegate.h */,
 				59A32651208997C10007EF26 /* AppDelegate.m */,
 				59A32653208997C10007EF26 /* ViewController.h */,
@@ -117,6 +176,9 @@
 		59A32666208997F90007EF26 /* YFTools */ = {
 			isa = PBXGroup;
 			children = (
+				59549FC2208AC9EA00BC1594 /* UIView+Extension */,
+				59549FB8208AC8E100BC1594 /* YFIndicatorView */,
+				59549FB7208AC86D00BC1594 /* YFPageViewController */,
 				59A32667208997F90007EF26 /* YFCollectionViewAutoFlowLayout */,
 			);
 			path = YFTools;
@@ -238,12 +300,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59796986208B0F76003E07E6 /* YFBasePageVC.m in Sources */,
+				59549FC1208AC9C000BC1594 /* UIView+Extension.m in Sources */,
 				59A3267A20899C460007EF26 /* KindCollectionViewCell.m in Sources */,
 				59A3267820899C460007EF26 /* HeaderReusableView.m in Sources */,
+				59796987208B0F76003E07E6 /* YFPageViewController.m in Sources */,
 				59A3266A208997F90007EF26 /* YFCollectionViewAutoFlowLayout.m in Sources */,
+				59796980208B0F27003E07E6 /* YFIndexIndicatorView.m in Sources */,
 				59A3267120899BFA0007EF26 /* YFCollectionViewAutoFlowLayoutVC.m in Sources */,
 				59A32655208997C10007EF26 /* ViewController.m in Sources */,
 				59A32660208997C10007EF26 /* main.m in Sources */,
+				59796981208B0F27003E07E6 /* IndexIndicatorCell.m in Sources */,
+				5979698A208B0FBB003E07E6 /* YFPageViewControllerVC.m in Sources */,
 				59A32652208997C10007EF26 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YFTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jianghu.YFTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YFTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jianghu.YFTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";

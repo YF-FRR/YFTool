@@ -7,8 +7,6 @@
 //
 
 #import "YFCollectionViewAutoFlowLayoutVC.h"
-
-#import "ItemCollectionCell.h"
 #import "KindCollectionViewCell.h"
 #import "HeaderReusableView.h"
 #import "YFTool.h"
@@ -26,8 +24,8 @@
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT (isIPhoneX ? ([UIScreen mainScreen].bounds.size.height -13 ) :[UIScreen mainScreen].bounds.size.height)
 
-static NSInteger seciotn_0 = -1;
-static NSInteger seciotn_1 = -1;
+static NSInteger seciotn_0 = 0;
+static NSInteger seciotn_1 = 0;
 
 @interface YFCollectionViewAutoFlowLayoutVC ()<YFCollectionViewAutoFlowLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,weak)UICollectionView *collectionView;

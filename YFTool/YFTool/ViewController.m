@@ -17,11 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpView];
+    self.navigationItem.title = @"YFToolList";
 }
 
 -(void)setUpView{
-    
-    self.additionalSafeAreaInsets = UIEdgeInsetsZero;
+
     UITableView *tableView=[[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     tableView.delegate=self;
     tableView.dataSource=self;
