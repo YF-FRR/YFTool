@@ -2,8 +2,8 @@
 Pod::Spec.new do |s|
 
 s.name         = "YFPersonalTools"
-s.version      = "0.0.1"
-s.summary      = "分装一些常用的工具和UI控件"
+s.version      = "0.0.3"
+s.summary      = "封装一些常用的工具和UI控件"
 
 s.description  = <<-DESC
 1.YFPageViewController
@@ -15,13 +15,13 @@ DESC
 s.homepage     = "https://github.com/YFXPP/YFTool/tree/master/YFTool/YFTools"
 
 s.license      = "MIT"
-s.author             = { "ios_yangfei" => "16822hf@163.com" }
+s.author             = { "ios_yangfei" => "" }
 s.platform     = :ios, "8.0"
 s.requires_arc = true
 s.source       = { :git => "https://github.com/YFXPP/YFTool.git", :tag => "#{s.version}" }
 
 
-s.source_files  = "YFTool/YFTools","YFTool/YFTool.h", "YFTool/YFTools/**/*.{h,m}"
+s.source_files  = "YFTool/YFTool.h", "YFTool/YFTools/UIView+Extension/**/*.{h,m}", "YFTool/YFTools/YFCollectionViewAutoFlowLayout/**/*.{h,m}", "YFTool/YFTools/YFIndicatorView/**/*.{h,m}", "YFTool/YFTools/YFPageViewController/**/*.{h,m}", "YFTool/YFTools/YFProgressHUD/**/*.{h,m}"
 s.exclude_files = ""
 
 
