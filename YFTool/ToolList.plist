@@ -26,5 +26,11 @@
 		<key>VC</key>
 		<string>YFProgressHUDVC</string>
 	</dict>
+	<dict>
+		<key>Title</key>
+		<string>YFPickerView</string>
+		<key>VC</key>
+		<string>YFPickerViewVC</string>
+	</dict>
 </array>
 </plist>

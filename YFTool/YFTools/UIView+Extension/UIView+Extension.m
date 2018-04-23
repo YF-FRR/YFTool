@@ -16,6 +16,8 @@ CGFloat _mas_bottom;
 CGFloat _mas_right;
 CGFloat _mas_width;
 CGFloat _mas_height;
+CGFloat _mas_centerX;
+CGFloat _mas_centerY;
 
 - (void)setX:(CGFloat)x
 {
@@ -185,6 +187,18 @@ CGFloat _mas_height;
     [self.superview addConstraint:layout_height];
 }
 
+-(void)setMas_centerX:(CGFloat)mas_centerX{
+    _mas_centerX = mas_centerX;
+    NSLayoutConstraint *layout_centerX = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:mas_centerX];
+    [self.superview addConstraint:layout_centerX];
+}
+
+-(void)setMas_centerY:(CGFloat)mas_centerY{
+    _mas_centerY = mas_centerY;
+    NSLayoutConstraint *layout_centerY = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeCenterY multiplier:1 constant:mas_centerY];
+    [self.superview addConstraint:layout_centerY];
+}
+
 -(CGFloat)mas_top{
     return _mas_top;
 }
@@ -207,6 +221,14 @@ CGFloat _mas_height;
 
 -(CGFloat)mas_width{
     return _mas_width;
+}
+
+-(CGFloat)mas_centerX{
+    return _mas_centerX;
+}
+
+-(CGFloat)mas_centerY{
+    return _mas_centerY;
 }
 
 @end

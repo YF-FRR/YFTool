@@ -13,16 +13,13 @@
 
 #define indicatorViewH 40
 
-#define RandomColor [UIColor colorWithRed:(arc4random()%256 /255.0) green:(arc4random()%256 /255.0) blue:(arc4random()%256/255.0) alpha:1.0]
-
 #define isIPhoneX ([UIScreen mainScreen].bounds.size.width>= 375.0f && [UIScreen mainScreen].bounds.size.height >= 812.0f)
 //状态栏高度
 #define STATUS_HEIGHT (isIPhoneX ? 44 : 20)
 //导航栏高
 #define NAVI_HEIGHT (44 + STATUS_HEIGHT)
 
-#define WIDTH [UIScreen mainScreen].bounds.size.width
-#define HEIGHT (isIPhoneX ? ([UIScreen mainScreen].bounds.size.height -13 ) :[UIScreen mainScreen].bounds.size.height)
+
 
 static NSInteger seciotn_0 = 0;
 static NSInteger seciotn_1 = 0;

@@ -28,6 +28,8 @@ typedef void(^ConstraintMake)(UIView *make);
 @property (nonatomic, assign) CGFloat mas_right;
 @property (nonatomic, assign) CGFloat mas_width;
 @property (nonatomic, assign) CGFloat mas_height;
+@property (nonatomic, assign) CGFloat mas_centerX;
+@property (nonatomic, assign) CGFloat mas_centerY;
 
 -(void)addLayoutConstraint:(UIEdgeInsets)edgeInset;
 -(void)mas_constraint:(ConstraintMake)constraintMake;
