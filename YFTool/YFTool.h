@@ -15,6 +15,7 @@
 #import "YFCollectionViewAutoFlowLayout.h"
 #import "YFProgressHUD.h"
 #import "YLImageView.h"
+#import "YFPickerView.h"
 
 
 

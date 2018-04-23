@@ -1,66 +1,74 @@
 //
-//  ChooseTimeView.h
-//  JHWaiMaiUpdate
+//  YFPickerView.h
+//  YFTool
 //
-//  Created by jianghu3 on 16/6/30.
-//  Copyright © 2016年 jianghu2. All rights reserved.
+//  Created by ios_yangfei on 2018/4/23.
+//  Copyright © 2018年 jianghu3. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "YFPickerViewDefine.h"
 
-typedef void(^PickerChooseBlock)(NSString *str1,NSString *str2,NSString *str3);
+@class YFPickerView;
+@protocol YFPickerViewDelegate<NSObject>
+@optional
 
-typedef enum : NSUInteger {
-    YFPickerViewTypeThreeRow,
-    YFPickerViewTypeTwoRow,
-    YFPickerViewTypeOneRow
-} YFPickerViewType;
+/**
+ 点击确定按钮的回调
 
-typedef NS_ENUM(NSUInteger, YFPickerViewShowType) {
-    YFPickerViewShowFromBottom,
-    YFPickerViewShowFromCenter,
-};
+ @param pickerView      YFPickerView对象
+ @param row_1           第一个UIPickerView选择的row
+ @param row_2           第二个UIPickerView选择的row
+ @param row_3           第三个UIPickerView选择的row
+ */
+-(void)pickerView:(YFPickerView *)pickerView clickSureActionRow1:(NSInteger)row_1 row2:(NSInteger)row_2 row3:(NSInteger)row_3;
 
-typedef NS_ENUM(NSUInteger, YFPickerViewSubViewLocationType) {
-    YFPickerViewSubViewLocationTopCenter,
-    YFPickerViewSubViewLocationTopLeft,
-    YFPickerViewSubViewLocationTopRight,
-    YFPickerViewSubViewLocationBottomCenter,
-    YFPickerViewSubViewLocationBottomLeft,
-    YFPickerViewSubViewLocationBottomRight,
-};
+/**
+ 选择某一个UIPickerView的回调
+
+ @param pickerView      YFPickerView对象
+ @param indexPath       UIPickerView选择的row
+ */
+-(void)pickerView:(YFPickerView *)pickerView didSelectIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ UIPickerView的文字显示处理
+
+ @param pickerView       YFPickerView对象
+ @param indexPath        UIPickerView当前的row
+ @param textLab          UIPickerView当前的row对应显示的view
+ */
+-(void)pickerView:(YFPickerView *)pickerView viewForIndexPath:(NSIndexPath *)indexPath view:(UILabel *)textLab;
+
+@end
 
 @interface YFPickerView : UIView
 
-@property(nonatomic,copy)NSString *titleStr;// title
-@property(nonatomic,copy)PickerChooseBlock chooseBlock;
+@property(nonatomic,weak)id<YFPickerViewDelegate> delegate;
 
-@property(nonatomic,strong)NSArray *dataSource;
+@property(nonatomic,copy)NSString *titleStr;// title
 @property(nonatomic,strong)NSArray *firstArr;
 @property(nonatomic,strong)NSArray *secondArr;
 @property(nonatomic,strong)NSArray *thirdArr;
-@property(nonatomic,assign)NSInteger firstRow;//点击确定的时候选择的row
-@property(nonatomic,assign)NSInteger secondRow;//点击确定的时候选择的row
-@property(nonatomic,assign)NSInteger thirdRow;//点击确定的时候选择的row
 
-@property(nonatomic,weak)UIPickerView *firstPicker;
-@property(nonatomic,weak)UIPickerView *secondPicker;
-@property(nonatomic,weak)UIPickerView *thirdPicker;
 @property(nonatomic,assign)YFPickerViewShowType showType;// pickview展示出来时的动画位置
 @property(nonatomic,assign)YFPickerViewSubViewLocationType sureBtnType;
 @property(nonatomic,assign)YFPickerViewSubViewLocationType titleLabType;
 
 
+/**
+ 初始化
+
+ @param type    YFPickerViewType初始化几个UIPickerView
+ @return        YFPickerView对象
+ */
 -(instancetype)initWithType:(YFPickerViewType)type;
--(void)show;
--(void)hidden;
+// 展示
+-(void)showPickerView;
+// 消失
+-(void)hiddenPickerView;
+// 刷新数据
+-(void)reloadData;
 
-
-#pragma mark ====== 子类需要重写的方法 =======
-// 点击确定的方法
--(void)clickSureAction;
-// 选择某一个row的处理
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row;
-// 每一个row显示的文字处理
--(void)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row view:(UILabel *)textLab;
 @end
+

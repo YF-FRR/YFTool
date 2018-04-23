@@ -6,8 +6,8 @@
 //  Copyright © 2018年 jianghu3. All rights reserved.
 //
 
-#import "YFPickerView.h"
+#import "YFPickerViewNormal.h"
 
-@interface YFSinglePickerView : YFPickerView
+@interface YFSinglePickerView : YFPickerViewNormal
 
 @end

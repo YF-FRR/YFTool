@@ -1,12 +1,12 @@
 //
-//  YFPickerView.m
-//  YFTool
+//  ChooseTimeView.m
+//  JHWaiMaiUpdate
 //
-//  Created by ios_yangfei on 2018/4/23.
-//  Copyright © 2018年 jianghu3. All rights reserved.
+//  Created by jianghu3 on 16/6/30.
+//  Copyright © 2016年 jianghu2. All rights reserved.
 //
 
-#import "YFPickerView.h"
+#import "YFPickerViewNormal.h"
 #import "AppDelegate.h"
 #import "YFTool.h"
 
@@ -16,24 +16,18 @@
 #define PickerViewRowH 40
 #define Margin  15
 
-@interface YFPickerView ()<UIPickerViewDataSource,UIPickerViewDelegate>
+@interface YFPickerViewNormal ()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property(nonatomic,weak)UIControl *control;
 @property(nonatomic,assign)YFPickerViewType type;
 @property(nonatomic,weak)UIView *backView;
 @property(nonatomic,weak)UIButton *sureBtn;
 @property(nonatomic,weak)UILabel *titleLab;
-
-@property(nonatomic,weak)UIPickerView *firstPicker;
-@property(nonatomic,weak)UIPickerView *secondPicker;
-@property(nonatomic,weak)UIPickerView *thirdPicker;
-
-@property(nonatomic,assign)NSInteger firstRow;//点击确定的时候选择的row
-@property(nonatomic,assign)NSInteger secondRow;//点击确定的时候选择的row
-@property(nonatomic,assign)NSInteger thirdRow;//点击确定的时候选择的row
+@property(nonatomic,weak)UIView *topLine;
+@property(nonatomic,weak)UIView *BotLine;
 
 @end
 
-@implementation YFPickerView
+@implementation YFPickerViewNormal
 
 -(instancetype)initWithType:(YFPickerViewType)type{
     if (self = [super initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)]) {
@@ -44,18 +38,18 @@
 }
 
 -(void)configUI{
-    
+ 
     self.titleLabType = YFPickerViewSubViewLocationTopCenter;
     self.sureBtnType = YFPickerViewSubViewLocationTopRight;
     
     UIControl *control = [[UIControl alloc]init];
     control.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
     control.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.4];
-    [control addTarget:self action:@selector(hiddenPickerView) forControlEvents:UIControlEventTouchUpInside];
+    [control addTarget:self action:@selector(hidden) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:control];
     self.control=control;
     control.alpha=0.0;
-    
+  
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT,WIDTH, 208)];
     [control addSubview:backView];
     backView.layer.cornerRadius=4;
@@ -79,10 +73,10 @@
     int count = 1;
     if (self.type==YFPickerViewTypeTwoRow)   count=2;
     if (self.type==YFPickerViewTypeThreeRow) count=3;
-    
+
     CGFloat marginW = Margin;
     CGFloat pickerW = (WIDTH - marginW * (count + 1))/count;
-    
+
     if (count == 1) {
         pickerW = PickerViewW;
         marginW = (WIDTH - pickerW)/2.0;
@@ -95,7 +89,7 @@
         pickerView.delegate = self;
         pickerView.backgroundColor=[UIColor whiteColor];
         pickerView.showsSelectionIndicator = YES;
-        
+
         pickerView.backgroundColor = RandomColor;
         [backView addSubview:pickerView];
         [pickerView mas_constraint:^(UIView *make) {
@@ -104,7 +98,7 @@
             make.mas_width = pickerW;
             make.mas_height = PickerViewH;
         }];
-        
+
         if (i==0) self.firstPicker=pickerView;
         if (i==1) self.secondPicker=pickerView;
         if (i==2) self.thirdPicker=pickerView;
@@ -112,11 +106,11 @@
         UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, PickerViewRowH, pickerW, 1.01)];
         [pickerView addSubview:topLine];
         topLine.backgroundColor = PickerThemeColor;
-        
+
         UIView *botLine = [[UIView alloc] initWithFrame:CGRectMake(0, PickerViewRowH * 2, pickerW, 1.01)];
         botLine.backgroundColor = PickerThemeColor;
         [pickerView addSubview:botLine];
-        
+
     }
     
     UIButton *sureBtn=[UIButton new];
@@ -127,7 +121,7 @@
         make.mas_width = 80;
         make.mas_top = 10;
     }];
-    
+
     sureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     sureBtn.layer.borderColor = PickerThemeColor.CGColor;
     sureBtn.layer.borderWidth=1.0;
@@ -159,21 +153,14 @@
     {
         if (singleLine.frame.size.height <= 1)
         {
-            [singleLine removeFromSuperview];
+           [singleLine removeFromSuperview];
         }
     }
     
     UILabel *lab = nil;
     lab = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
     lab.textAlignment =NSTextAlignmentCenter;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pickerView:viewForIndexPath:view:)]) {
-        NSInteger section = 0;
-        if (self.secondPicker == pickerView) section = 1;
-        if (self.thirdPicker == pickerView) section = 2;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-        [self.delegate pickerView:self viewForIndexPath:indexPath view:lab];
-    }
-    
+    [self pickerView:pickerView viewForRow:row view:lab];
     lab.font = [UIFont systemFontOfSize:14];
     lab.backgroundColor = [UIColor clearColor];
     
@@ -181,23 +168,7 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pickerView:didSelectIndexPath:)]) {
-        NSInteger section = 0;
-        if (self.firstPicker == pickerView) {
-            section = 0;
-            self.firstRow = row;
-        }
-        if (self.secondPicker == pickerView){
-            section = 1;
-            self.secondRow = row;
-        }
-        if (self.thirdPicker == pickerView){
-            section = 2;
-            self.thirdRow = row;
-        }
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-        [self.delegate pickerView:self didSelectIndexPath:indexPath];
-    }
+    [self pickerView:pickerView didSelectRow:row];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
@@ -216,7 +187,7 @@
 }
 
 #pragma mark ====== Functions =======
--(void)showPickerView{
+-(void)show{
     
     AppDelegate *app=(AppDelegate *)[UIApplication sharedApplication].delegate;
     [app.window addSubview:self.control];
@@ -236,7 +207,7 @@
     
 }
 
--(void)hiddenPickerView{
+-(void)hidden{
     
     if (self.showType == YFPickerViewShowFromCenter) {
         [UIView animateWithDuration:0.4 animations:^{
@@ -255,22 +226,8 @@
 
 // 点击确定
 -(void)clickSure{
-    [self hiddenPickerView];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pickerView:clickSureActionRow1:row2:row3:)]) {
-        [self.delegate pickerView:self clickSureActionRow1:self.firstRow row2:self.secondRow row3:self.thirdRow];
-    }
-}
-
--(void)reloadData{
-    [self.firstPicker reloadAllComponents];
-    [self.secondPicker reloadAllComponents];
-    [self.thirdPicker reloadAllComponents];
-}
-
-#pragma mark ====== Setter =======
--(void)setTitleStr:(NSString *)titleStr{
-    _titleStr = titleStr;
-    self.titleLab.text = titleStr;
+    [self hidden];
+    [self clickSureAction];
 }
 
 -(void)setShowType:(YFPickerViewShowType)showType{
@@ -291,25 +248,31 @@
             pickerW = PickerViewW;
             marginW = (WIDTH - 30 - pickerW)/2.0;
         }
-        
+
         [self.firstPicker mas_constraint:^(UIView *make) {
             make.mas_left = marginW;
             make.mas_width = pickerW;
         }];
-        
+
         [self.secondPicker mas_constraint:^(UIView *make) {
             make.mas_left = marginW + pickerW + marginW;
             make.mas_width = pickerW;
         }];
-        
+
         
         [self.thirdPicker mas_constraint:^(UIView *make) {
             make.mas_left = (marginW + pickerW) * 2 + marginW;
             make.mas_width = pickerW;
         }];
-        
+
     }
 }
+
+-(void)setTitleStr:(NSString *)titleStr{
+    _titleStr = titleStr;
+    self.titleLab.text = titleStr;
+}
+
 #pragma mark ====== SubView Location =======
 -(void)setSureBtnType:(YFPickerViewSubViewLocationType)sureBtnType{
     _sureBtnType = sureBtnType;
@@ -420,5 +383,12 @@
     }
 }
 
-@end
 
+
+#pragma mark ====== subClass Rewrite =======
+-(void)clickSureAction{}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row{}
+
+-(void)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row view:(UILabel *)textLab{}
+@end

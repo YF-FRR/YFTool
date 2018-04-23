@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		593BA554208D71B400660098 /* YFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 593BA54F208D71B300660098 /* YFPickerView.m */; };
+		593BA554208D71B400660098 /* YFPickerViewNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 593BA54F208D71B300660098 /* YFPickerViewNormal.m */; };
 		593BA559208D788200660098 /* YFPickerViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 593BA558208D788200660098 /* YFPickerViewVC.m */; };
 		593BA55C208D7ABF00660098 /* YFSinglePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 593BA55B208D7ABE00660098 /* YFSinglePickerView.m */; };
 		593BA55F208D7ACE00660098 /* YFDoublePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 593BA55E208D7ACE00660098 /* YFDoublePickerView.m */; };
@@ -41,12 +41,13 @@
 		59A3267120899BFA0007EF26 /* YFCollectionViewAutoFlowLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A3267020899BFA0007EF26 /* YFCollectionViewAutoFlowLayoutVC.m */; };
 		59A3267820899C460007EF26 /* HeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A3267420899C460007EF26 /* HeaderReusableView.m */; };
 		59A3267A20899C460007EF26 /* KindCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A3267720899C460007EF26 /* KindCollectionViewCell.m */; };
+		59D6B01D208DBC2C00BCE56E /* YFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D6B01C208DBC2C00BCE56E /* YFPickerView.m */; };
 		DAD4FCE579CD10020BF2B11D /* libPods-YFTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F9CE25B3F1F698411C967C /* libPods-YFTool.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		593BA54B208D71B300660098 /* YFPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPickerView.h; sourceTree = "<group>"; };
-		593BA54F208D71B300660098 /* YFPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPickerView.m; sourceTree = "<group>"; };
+		593BA54B208D71B300660098 /* YFPickerViewNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPickerViewNormal.h; sourceTree = "<group>"; };
+		593BA54F208D71B300660098 /* YFPickerViewNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPickerViewNormal.m; sourceTree = "<group>"; };
 		593BA555208D72FB00660098 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		593BA557208D788200660098 /* YFPickerViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFPickerViewVC.h; sourceTree = "<group>"; };
 		593BA558208D788200660098 /* YFPickerViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFPickerViewVC.m; sourceTree = "<group>"; };
@@ -104,6 +105,9 @@
 		59A3267320899C460007EF26 /* KindCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindCollectionViewCell.h; sourceTree = "<group>"; };
 		59A3267420899C460007EF26 /* HeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderReusableView.m; sourceTree = "<group>"; };
 		59A3267720899C460007EF26 /* KindCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindCollectionViewCell.m; sourceTree = "<group>"; };
+		59AA3050208DD79C00CEEC4F /* YFPickerViewDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFPickerViewDefine.h; sourceTree = "<group>"; };
+		59D6B01B208DBC2C00BCE56E /* YFPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFPickerView.h; sourceTree = "<group>"; };
+		59D6B01C208DBC2C00BCE56E /* YFPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFPickerView.m; sourceTree = "<group>"; };
 		C240DFE857EC8A07B49CBCCE /* Pods-YFTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YFTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-YFTool/Pods-YFTool.release.xcconfig"; sourceTree = "<group>"; };
 		D1AA4F5163FF9CE4075765E8 /* Pods-YFTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YFTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YFTool/Pods-YFTool.debug.xcconfig"; sourceTree = "<group>"; };
 		F2F9CE25B3F1F698411C967C /* libPods-YFTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YFTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,8 +145,8 @@
 		593BA548208D71B300660098 /* YFPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				593BA54B208D71B300660098 /* YFPickerView.h */,
-				593BA54F208D71B300660098 /* YFPickerView.m */,
+				59D6B01B208DBC2C00BCE56E /* YFPickerView.h */,
+				59D6B01C208DBC2C00BCE56E /* YFPickerView.m */,
 			);
 			path = YFPickerView;
 			sourceTree = "<group>";
@@ -150,6 +154,8 @@
 		593BA556208D786300660098 /* YFPickerViewVC */ = {
 			isa = PBXGroup;
 			children = (
+				593BA54B208D71B300660098 /* YFPickerViewNormal.h */,
+				593BA54F208D71B300660098 /* YFPickerViewNormal.m */,
 				593BA55A208D7ABE00660098 /* YFSinglePickerView.h */,
 				593BA55B208D7ABE00660098 /* YFSinglePickerView.m */,
 				593BA55D208D7ACE00660098 /* YFDoublePickerView.h */,
@@ -245,6 +251,7 @@
 				59A3266C20899B3E0007EF26 /* ToolList.plist */,
 				59A3266B208998170007EF26 /* YFTool.h */,
 				593BA555208D72FB00660098 /* Define.h */,
+				59AA3050208DD79C00CEEC4F /* YFPickerViewDefine.h */,
 				59A32666208997F90007EF26 /* YFTools */,
 				59A3264F208997C10007EF26 /* YFTool */,
 				59A3264E208997C10007EF26 /* Products */,
@@ -431,9 +438,10 @@
 				59796992208B1E08003E07E6 /* YLImageView.m in Sources */,
 				59A3267120899BFA0007EF26 /* YFCollectionViewAutoFlowLayoutVC.m in Sources */,
 				59A32655208997C10007EF26 /* ViewController.m in Sources */,
+				59D6B01D208DBC2C00BCE56E /* YFPickerView.m in Sources */,
 				59796991208B1E08003E07E6 /* YLGIFImage.m in Sources */,
 				59A32660208997C10007EF26 /* main.m in Sources */,
-				593BA554208D71B400660098 /* YFPickerView.m in Sources */,
+				593BA554208D71B400660098 /* YFPickerViewNormal.m in Sources */,
 				59796981208B0F27003E07E6 /* IndexIndicatorCell.m in Sources */,
 				593BA562208D7ED200660098 /* YFThreePickerView.m in Sources */,
 				593BA55F208D7ACE00660098 /* YFDoublePickerView.m in Sources */,
