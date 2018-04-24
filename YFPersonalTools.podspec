@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "YFPersonalTools"
-s.version      = "0.0.4"
+s.version      = "0.0.5"
 s.summary      = "封装一些常用的工具和UI控件"
 
 s.description  = <<-DESC
@@ -10,6 +10,7 @@ s.description  = <<-DESC
 2.YFCollectionViewAutoFlowLayout(自定义流水布局)
 3.YFIndicatorView
 4.YFProgressHUD(可以显示Gif的HUD)
+5.YFPickerView(最多三个的UIPickerView选择器)
 DESC
 
 s.homepage     = "https://github.com/YFXPP/YFTool/tree/master/YFTool/YFTools"
