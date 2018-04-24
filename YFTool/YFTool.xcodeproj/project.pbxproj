@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		593BA54B208D71B300660098 /* YFPickerViewNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPickerViewNormal.h; sourceTree = "<group>"; };
 		593BA54F208D71B300660098 /* YFPickerViewNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPickerViewNormal.m; sourceTree = "<group>"; };
-		593BA555208D72FB00660098 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		593BA555208D72FB00660098 /* YFToolDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFToolDefine.h; sourceTree = "<group>"; };
 		593BA557208D788200660098 /* YFPickerViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFPickerViewVC.h; sourceTree = "<group>"; };
 		593BA558208D788200660098 /* YFPickerViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFPickerViewVC.m; sourceTree = "<group>"; };
 		593BA55A208D7ABE00660098 /* YFSinglePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFSinglePickerView.h; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 			children = (
 				59A3266C20899B3E0007EF26 /* ToolList.plist */,
 				59A3266B208998170007EF26 /* YFTool.h */,
-				593BA555208D72FB00660098 /* Define.h */,
+				593BA555208D72FB00660098 /* YFToolDefine.h */,
 				59AA3050208DD79C00CEEC4F /* YFPickerViewDefine.h */,
 				59A32666208997F90007EF26 /* YFTools */,
 				59A3264F208997C10007EF26 /* YFTool */,

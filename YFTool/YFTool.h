@@ -9,15 +9,12 @@
 #ifndef YFTool_h
 #define YFTool_h
 
-#import "Define.h"
+#import "YFToolDefine.h"
 #import "UIView+Extension.h"
+
+#import "YFPickerView.h"
+#import "YFProgressHUD.h"
 #import "YFIndexIndicatorView.h"
 #import "YFCollectionViewAutoFlowLayout.h"
-#import "YFProgressHUD.h"
-#import "YLImageView.h"
-#import "YFPickerView.h"
-
-
-
 
 #endif /* YFTool_h */

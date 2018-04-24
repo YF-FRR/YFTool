@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "YFPersonalTools"
-s.version      = "0.0.3"
+s.version      = "0.0.4"
 s.summary      = "封装一些常用的工具和UI控件"
 
 s.description  = <<-DESC

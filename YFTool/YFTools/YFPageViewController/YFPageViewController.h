@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "YFBasePageVC.h"
 
+typedef NS_ENUM(NSUInteger, VCTransformType) {
+    VCTransformType_Scroll,     // 滚动
+    VCTransformType_Overlay     // 叠加
+};
+
 @class YFPageViewController;
 @protocol YFPageViewControllerDelegate <NSObject>
 @optional
@@ -23,13 +28,7 @@
 -(void)pageViewController:(YFPageViewController *)pageViewController
    showNextViewController:(YFBasePageVC *)subVC
                showNextVC:(NSUInteger)index;
-
 @end
-
-typedef NS_ENUM(NSUInteger, VCTransformType) {
-    VCTransformType_Scroll,     // 滚动
-    VCTransformType_Overlay     // 叠加
-};
 
 @interface YFPageViewController : UIViewController
 

@@ -30,7 +30,6 @@
 @property(nonatomic,assign)NSInteger firstRow;//点击确定的时候选择的row
 @property(nonatomic,assign)NSInteger secondRow;//点击确定的时候选择的row
 @property(nonatomic,assign)NSInteger thirdRow;//点击确定的时候选择的row
-
 @end
 
 @implementation YFPickerView
@@ -95,8 +94,7 @@
         pickerView.delegate = self;
         pickerView.backgroundColor=[UIColor whiteColor];
         pickerView.showsSelectionIndicator = YES;
-        
-        pickerView.backgroundColor = RandomColor;
+
         [backView addSubview:pickerView];
         [pickerView mas_constraint:^(UIView *make) {
             make.mas_left = (marginW + pickerW) * i + marginW;
@@ -152,15 +150,11 @@
     
 }
 
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-
-{
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+   
     for(UIView *singleLine in pickerView.subviews)
     {
-        if (singleLine.frame.size.height <= 1)
-        {
-            [singleLine removeFromSuperview];
-        }
+        if (singleLine.frame.size.height <= 1)[singleLine removeFromSuperview];
     }
     
     UILabel *lab = nil;
@@ -206,7 +200,6 @@
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-
 {
     int count = 1;
     if (self.type==YFPickerViewTypeThreeRow) count=3;

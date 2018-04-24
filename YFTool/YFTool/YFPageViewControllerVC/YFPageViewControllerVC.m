@@ -17,7 +17,7 @@
 #define NAVI_HEIGHT (44 + STATUS_HEIGHT)
 
 #define WIDTH [UIScreen mainScreen].bounds.size.width
-#define HEIGHT (isIPhoneX ? ([UIScreen mainScreen].bounds.size.height -13 ) :[UIScreen mainScreen].bounds.size.height)
+
 
 @interface YFPageViewControllerVC ()<YFIndexIndicatorViewDelegate,YFPageViewControllerDelegate>
 @property(nonatomic,strong)NSMutableArray *subVCArr;

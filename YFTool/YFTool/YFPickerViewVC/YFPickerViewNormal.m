@@ -90,7 +90,6 @@
         pickerView.backgroundColor=[UIColor whiteColor];
         pickerView.showsSelectionIndicator = YES;
 
-        pickerView.backgroundColor = RandomColor;
         [backView addSubview:pickerView];
         [pickerView mas_constraint:^(UIView *make) {
             make.mas_left = (marginW + pickerW) * i + marginW;
