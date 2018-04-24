@@ -7,7 +7,6 @@
 //
 
 #import "YFPickerView.h"
-#import "AppDelegate.h"
 #import "YFTool.h"
 
 #define PickerThemeColor [UIColor greenColor]
@@ -211,7 +210,7 @@
 #pragma mark ====== Functions =======
 -(void)showPickerView{
     
-    AppDelegate *app=(AppDelegate *)[UIApplication sharedApplication].delegate;
+    id<UIApplicationDelegate> app = [UIApplication sharedApplication].delegate;
     [app.window addSubview:self.control];
     
     if (self.showType == YFPickerViewShowFromCenter) {

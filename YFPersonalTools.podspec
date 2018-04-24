@@ -21,7 +21,7 @@ s.requires_arc = true
 s.source       = { :git => "https://github.com/YFXPP/YFTool.git", :tag => "#{s.version}" }
 
 
-s.source_files  = "YFTool/YFTool.h", "YFTool/YFTools/UIView+Extension/**/*.{h,m}", "YFTool/YFTools/YFCollectionViewAutoFlowLayout/**/*.{h,m}", "YFTool/YFTools/YFIndicatorView/**/*.{h,m}", "YFTool/YFTools/YFPageViewController/**/*.{h,m}", "YFTool/YFTools/YFProgressHUD/**/*.{h,m}"
+s.source_files  = "YFTool/YFTool.h","YFTool/YFToolDefine.h","YFTool/YFPickerViewDefine.h", "YFTool/YFTools/UIView+Extension/**/*.{h,m}", "YFTool/YFTools/YFCollectionViewAutoFlowLayout/**/*.{h,m}", "YFTool/YFTools/YFIndicatorView/**/*.{h,m}", "YFTool/YFTools/YFPageViewController/**/*.{h,m}", "YFTool/YFTools/YFProgressHUD/**/*.{h,m}", "YFTool/YFTools/YFPickerView/**/*.{h,m}"
 s.exclude_files = ""
 
 
