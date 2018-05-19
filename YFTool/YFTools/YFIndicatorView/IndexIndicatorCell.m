@@ -37,10 +37,10 @@
     UILabel *countLab = [UILabel new];
     [self addSubview:countLab];
     [countLab mas_constraint:^(UIView *make) {
-        make.mas_right = 0;
-        make.mas_top = 0;
-        make.mas_width = w;
-        make.mas_height = w;
+        make.yf_mas_right = 0;
+        make.yf_mas_top = 0;
+        make.yf_mas_width = w;
+        make.yf_mas_height = w;
     }];
     countLab.textColor = [UIColor whiteColor];
     countLab.font = [UIFont systemFontOfSize:10];

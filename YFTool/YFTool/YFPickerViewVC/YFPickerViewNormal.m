@@ -60,10 +60,10 @@
     UILabel *titleLab = [UILabel new];
     [backView addSubview:titleLab];
     [titleLab mas_constraint:^(UIView *make) {
-        make.mas_left = 0;
-        make.mas_right = 0;
-        make.mas_top = 10;
-        make.mas_height = 20;
+        make.yf_mas_left = 0;
+        make.yf_mas_right = 0;
+        make.yf_mas_top = 10;
+        make.yf_mas_height = 20;
     }];
     titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:16];
@@ -92,10 +92,10 @@
 
         [backView addSubview:pickerView];
         [pickerView mas_constraint:^(UIView *make) {
-            make.mas_left = (marginW + pickerW) * i + marginW;
-            make.mas_centerY = 10;
-            make.mas_width = pickerW;
-            make.mas_height = PickerViewH;
+            make.yf_mas_left = (marginW + pickerW) * i + marginW;
+            make.yf_mas_centerY = 10;
+            make.yf_mas_width = pickerW;
+            make.yf_mas_height = PickerViewH;
         }];
 
         if (i==0) self.firstPicker=pickerView;
@@ -115,10 +115,10 @@
     UIButton *sureBtn=[UIButton new];
     [backView addSubview:sureBtn];
     [sureBtn mas_constraint:^(UIView *make) {
-        make.mas_right = -10;
-        make.mas_height = 40;
-        make.mas_width = 80;
-        make.mas_top = 10;
+        make.yf_mas_right = -10;
+        make.yf_mas_height = 40;
+        make.yf_mas_width = 80;
+        make.yf_mas_top = 10;
     }];
 
     sureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -249,19 +249,19 @@
         }
 
         [self.firstPicker mas_constraint:^(UIView *make) {
-            make.mas_left = marginW;
-            make.mas_width = pickerW;
+            make.yf_mas_left = marginW;
+            make.yf_mas_width = pickerW;
         }];
 
         [self.secondPicker mas_constraint:^(UIView *make) {
-            make.mas_left = marginW + pickerW + marginW;
-            make.mas_width = pickerW;
+            make.yf_mas_left = marginW + pickerW + marginW;
+            make.yf_mas_width = pickerW;
         }];
 
         
         [self.thirdPicker mas_constraint:^(UIView *make) {
-            make.mas_left = (marginW + pickerW) * 2 + marginW;
-            make.mas_width = pickerW;
+            make.yf_mas_left = (marginW + pickerW) * 2 + marginW;
+            make.yf_mas_width = pickerW;
         }];
 
     }
@@ -279,50 +279,50 @@
     switch (sureBtnType) {
         case YFPickerViewSubViewLocationTopCenter:
             [self.sureBtn mas_constraint:^(UIView *make) {
-                make.mas_centerX = 0;
-                make.mas_top = 10;
-                make.mas_width = 80;
-                make.mas_height = 40;
+                make.yf_mas_centerX = 0;
+                make.yf_mas_top = 10;
+                make.yf_mas_width = 80;
+                make.yf_mas_height = 40;
             }];
             break;
         case YFPickerViewSubViewLocationTopLeft:
             [self.sureBtn mas_constraint:^(UIView *make) {
-                make.mas_left=10;
-                make.mas_top=10;
-                make.mas_width = 80;
-                make.mas_height = 40;
+                make.yf_mas_left=10;
+                make.yf_mas_top=10;
+                make.yf_mas_width = 80;
+                make.yf_mas_height = 40;
             }];
             break;
         case YFPickerViewSubViewLocationTopRight:
             [self.sureBtn mas_constraint:^(UIView *make) {
-                make.mas_right = -10;
-                make.mas_top = 10;
-                make.mas_width = 80;
-                make.mas_height = 40;
+                make.yf_mas_right = -10;
+                make.yf_mas_top = 10;
+                make.yf_mas_width = 80;
+                make.yf_mas_height = 40;
             }];
             break;
         case YFPickerViewSubViewLocationBottomCenter:
             [self.sureBtn mas_constraint:^(UIView *make) {
-                make.mas_centerX = 0;
-                make.mas_bottom = -10;
-                make.mas_width = 80;
-                make.mas_height = 40;
+                make.yf_mas_centerX = 0;
+                make.yf_mas_bottom = -10;
+                make.yf_mas_width = 80;
+                make.yf_mas_height = 40;
             }];
             break;
         case YFPickerViewSubViewLocationBottomLeft:
             [self.sureBtn mas_constraint:^(UIView *make) {
-                make.mas_left = 10;
-                make.mas_bottom = -10;
-                make.mas_width = 80;
-                make.mas_height = 40;
+                make.yf_mas_left = 10;
+                make.yf_mas_bottom = -10;
+                make.yf_mas_width = 80;
+                make.yf_mas_height = 40;
             }];
             break;
         case YFPickerViewSubViewLocationBottomRight:
             [self.sureBtn mas_constraint:^(UIView *make) {
-                make.mas_right = -10;
-                make.mas_bottom = -10;
-                make.mas_width = 80;
-                make.mas_height = 40;
+                make.yf_mas_right = -10;
+                make.yf_mas_bottom = -10;
+                make.yf_mas_width = 80;
+                make.yf_mas_height = 40;
             }];
             break;
             
@@ -336,44 +336,44 @@
     switch (titleLabType) {
         case YFPickerViewSubViewLocationTopCenter:
             [self.titleLab mas_constraint:^(UIView *make) {
-                make.mas_centerX = 0;
-                make.mas_top = 10;
-                make.mas_height = 20;
+                make.yf_mas_centerX = 0;
+                make.yf_mas_top = 10;
+                make.yf_mas_height = 20;
             }];
             break;
         case YFPickerViewSubViewLocationTopLeft:
             [self.titleLab mas_constraint:^(UIView *make) {
-                make.mas_left=10;
-                make.mas_top=10;
-                make.mas_height = 20;
+                make.yf_mas_left=10;
+                make.yf_mas_top=10;
+                make.yf_mas_height = 20;
             }];
             break;
         case YFPickerViewSubViewLocationTopRight:
             [self.titleLab mas_constraint:^(UIView *make) {
-                make.mas_right = -10;
-                make.mas_top = 10;
-                make.mas_height = 20;
+                make.yf_mas_right = -10;
+                make.yf_mas_top = 10;
+                make.yf_mas_height = 20;
             }];
             break;
         case YFPickerViewSubViewLocationBottomCenter:
             [self.titleLab mas_constraint:^(UIView *make) {
-                make.mas_centerX = 0;
-                make.mas_bottom = -10;
-                make.mas_height = 20;
+                make.yf_mas_centerX = 0;
+                make.yf_mas_bottom = -10;
+                make.yf_mas_height = 20;
             }];
             break;
         case YFPickerViewSubViewLocationBottomLeft:
             [self.titleLab mas_constraint:^(UIView *make) {
-                make.mas_left = 10;
-                make.mas_bottom = -10;
-                make.mas_height = 20;
+                make.yf_mas_left = 10;
+                make.yf_mas_bottom = -10;
+                make.yf_mas_height = 20;
             }];
             break;
         case YFPickerViewSubViewLocationBottomRight:
             [self.titleLab mas_constraint:^(UIView *make) {
-                make.mas_right = -10;
-                make.mas_bottom = -10;
-                make.mas_height = 20;
+                make.yf_mas_right = -10;
+                make.yf_mas_bottom = -10;
+                make.yf_mas_height = 20;
             }];
             break;
             

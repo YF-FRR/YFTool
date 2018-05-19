@@ -42,10 +42,10 @@
     YFIndexIndicatorView *indicatorView = [YFIndexIndicatorView new];
     [self.view addSubview:indicatorView];
     [indicatorView mas_constraint:^(UIView *make) {
-        make.mas_top = NAVI_HEIGHT + 10;
-        make.mas_left = 0;
-        make.mas_right = 0;
-        make.mas_height = 40;
+        make.yf_mas_top = NAVI_HEIGHT + 10;
+        make.yf_mas_left = 0;
+        make.yf_mas_right = 0;
+        make.yf_mas_height = 40;
     }];
     indicatorView.index_arr = arr;
     indicatorView.delegate = self;

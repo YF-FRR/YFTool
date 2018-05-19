@@ -22,14 +22,14 @@ typedef void(^ConstraintMake)(UIView *make);
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGSize size;
 
-@property (nonatomic, assign) CGFloat mas_top;
-@property (nonatomic, assign) CGFloat mas_left;
-@property (nonatomic, assign) CGFloat mas_bottom;
-@property (nonatomic, assign) CGFloat mas_right;
-@property (nonatomic, assign) CGFloat mas_width;
-@property (nonatomic, assign) CGFloat mas_height;
-@property (nonatomic, assign) CGFloat mas_centerX;
-@property (nonatomic, assign) CGFloat mas_centerY;
+@property (nonatomic, assign) CGFloat yf_mas_top;
+@property (nonatomic, assign) CGFloat yf_mas_left;
+@property (nonatomic, assign) CGFloat yf_mas_bottom;
+@property (nonatomic, assign) CGFloat yf_mas_right;
+@property (nonatomic, assign) CGFloat yf_mas_width;
+@property (nonatomic, assign) CGFloat yf_mas_height;
+@property (nonatomic, assign) CGFloat yf_mas_centerX;
+@property (nonatomic, assign) CGFloat yf_mas_centerY;
 
 -(void)addLayoutConstraint:(UIEdgeInsets)edgeInset;
 -(void)mas_constraint:(ConstraintMake)constraintMake;

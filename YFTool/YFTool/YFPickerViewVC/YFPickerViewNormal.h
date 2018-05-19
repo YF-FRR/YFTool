@@ -32,7 +32,6 @@ typedef void(^PickerChooseBlock)(NSString *str1,NSString *str2,NSString *str3);
 @property(nonatomic,assign)YFPickerViewSubViewLocationType sureBtnType;
 @property(nonatomic,assign)YFPickerViewSubViewLocationType titleLabType;
 
-
 -(instancetype)initWithType:(YFPickerViewType)type;
 -(void)show;
 -(void)hidden;
