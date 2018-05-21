@@ -11,7 +11,7 @@
 
 @interface YFPageViewController ()<UIScrollViewDelegate>
 @property(nonatomic,weak)UIScrollView *contentScrollView;
-@property(nonatomic,assign)int selected_index;
+@property(nonatomic,assign)NSInteger selected_index;
 @end
 
 @implementation YFPageViewController
