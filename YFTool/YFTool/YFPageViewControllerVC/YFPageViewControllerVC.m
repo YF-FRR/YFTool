@@ -8,6 +8,7 @@
 
 #import "YFPageViewControllerVC.h"
 #import "YFPageViewController.h"
+#import "PageBaseVC.h"
 #import "YFTool.h"
 
 #define isIPhoneX ([UIScreen mainScreen].bounds.size.width>= 375.0f && [UIScreen mainScreen].bounds.size.height >= 812.0f)
@@ -60,13 +61,13 @@
     
     self.subVCArr = [NSMutableArray array];
     for (int i=0; i<arr.count; i++) {
-        YFBasePageVC *vc = [YFBasePageVC new];
-        vc.index = i;
+        PageBaseVC *vc = [PageBaseVC new];
+        vc.yf_base_index = i;
         vc.superVC = self;
         [self.subVCArr addObject:vc];
     }
     
-    YFPageViewController *pageViewController = [[YFPageViewController alloc] initWithTransformType:VCTransformType_Overlay vcArr:self.subVCArr.copy];
+    YFPageViewController *pageViewController = [[YFPageViewController alloc] initWithTransformType:VCTransformType_Scroll vcArr:self.subVCArr.copy];
     pageViewController.view.frame = CGRectMake(0, NAVI_HEIGHT + 10 + 40, WIDTH, HEIGHT - (NAVI_HEIGHT + 10 + 40));
     pageViewController.delegate = self;
     pageViewController.superVC = self;

@@ -30,6 +30,7 @@
 		597969A8208B1E98003E07E6 /* loading_square@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 597969A0208B1E98003E07E6 /* loading_square@3x.png */; };
 		597969A9208B1E98003E07E6 /* loading_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 597969A1208B1E98003E07E6 /* loading_shadow@2x.png */; };
 		597969AA208B1E98003E07E6 /* loading_shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 597969A2208B1E98003E07E6 /* loading_shadow@3x.png */; };
+		598E86FF20B2CEAF005DF7C0 /* PageBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E86FE20B2CEAF005DF7C0 /* PageBaseVC.m */; };
 		59A32652208997C10007EF26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A32651208997C10007EF26 /* AppDelegate.m */; };
 		59A32655208997C10007EF26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A32654208997C10007EF26 /* ViewController.m */; };
 		59A32658208997C10007EF26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A32656208997C10007EF26 /* Main.storyboard */; };
@@ -85,6 +86,8 @@
 		597969A0208B1E98003E07E6 /* loading_square@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_square@3x.png"; sourceTree = "<group>"; };
 		597969A1208B1E98003E07E6 /* loading_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_shadow@2x.png"; sourceTree = "<group>"; };
 		597969A2208B1E98003E07E6 /* loading_shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_shadow@3x.png"; sourceTree = "<group>"; };
+		598E86FD20B2CEAF005DF7C0 /* PageBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageBaseVC.h; sourceTree = "<group>"; };
+		598E86FE20B2CEAF005DF7C0 /* PageBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageBaseVC.m; sourceTree = "<group>"; };
 		59A3264D208997C10007EF26 /* YFTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A32650208997C10007EF26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59A32651208997C10007EF26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 		59549FB5208AC83B00BC1594 /* YFPageViewControllerVC */ = {
 			isa = PBXGroup;
 			children = (
+				598E86FD20B2CEAF005DF7C0 /* PageBaseVC.h */,
+				598E86FE20B2CEAF005DF7C0 /* PageBaseVC.m */,
 				59796988208B0FBB003E07E6 /* YFPageViewControllerVC.h */,
 				59796989208B0FBB003E07E6 /* YFPageViewControllerVC.m */,
 			);
@@ -442,6 +447,7 @@
 				59796991208B1E08003E07E6 /* YLGIFImage.m in Sources */,
 				59A32660208997C10007EF26 /* main.m in Sources */,
 				593BA554208D71B400660098 /* YFPickerViewNormal.m in Sources */,
+				598E86FF20B2CEAF005DF7C0 /* PageBaseVC.m in Sources */,
 				59796981208B0F27003E07E6 /* IndexIndicatorCell.m in Sources */,
 				593BA562208D7ED200660098 /* YFThreePickerView.m in Sources */,
 				593BA55F208D7ACE00660098 /* YFDoublePickerView.m in Sources */,
