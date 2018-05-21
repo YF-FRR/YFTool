@@ -7,9 +7,11 @@
 //
 
 #import "YFPageViewController.h"
+#import "UIView+Extension.h"
 
 @interface YFPageViewController ()<UIScrollViewDelegate>
 @property(nonatomic,weak)UIScrollView *contentScrollView;
+@property(nonatomic,assign)int selected_index;
 @end
 
 @implementation YFPageViewController
@@ -26,7 +28,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
+    
+    self.selected_index = INT_MIN;
+    
     for (NSInteger i=0; i<_subVCArr.count; i++) {
         YFBasePageVC *vc = _subVCArr[i];
         [self addChildViewController:vc];
@@ -47,6 +51,7 @@
     }
 }
 
+
 #pragma mark ====== UIScrollViewDelegate =======
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat VC_WIDTH = self.view.bounds.size.width;
@@ -61,7 +66,9 @@
     }
     if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewController:showNextViewController:showNextVC:)]) {
         [self.delegate pageViewController:self showNextViewController:vc showNextVC:index];
-    }else{
+    }
+    if (_selected_index != index) {
+        _selected_index = index;
         [vc viewAppearToDoThing];
     }
     _current_index = index;
@@ -88,10 +95,12 @@
             default:
                 break;
         }
-        
-        [vc viewAppearToDoThing];
     }
     
+    if (_selected_index != current_index) {
+        _selected_index = current_index;
+        [vc viewAppearToDoThing];
+    }
     if (self.vcTransformType == VCTransformType_Scroll) {
         [self.contentScrollView setContentOffset:CGPointMake(VC_WIDTH * current_index, 0) animated:YES];
     }else{

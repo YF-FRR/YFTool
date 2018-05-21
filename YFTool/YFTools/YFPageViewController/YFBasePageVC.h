@@ -10,7 +10,7 @@
 
 @interface YFBasePageVC : UIViewController
 @property(nonatomic,weak)UIViewController *superVC;
-@property(nonatomic,assign)NSInteger index;
+@property(nonatomic,assign)NSInteger yf_base_index;
 
 // 界面第一次创建
 -(void)viewAppearToDoThing;

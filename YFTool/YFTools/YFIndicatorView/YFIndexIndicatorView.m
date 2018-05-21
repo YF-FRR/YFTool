@@ -9,7 +9,7 @@
 #import "IndexIndicatorCell.h"
 #import "YFTool.h"
 
-#define IndicatorLineH 4
+#define IndicatorLineH 2
 
 @interface YFIndexIndicatorView()<UICollectionViewDelegate,UICollectionViewDataSource,YFCollectionViewAutoFlowLayoutDelegate>{
     NSInteger current_selected_index;
@@ -61,6 +61,7 @@
         [self.collectionView addSubview:self.indicatroLineView];
         CGRect frame = CGRectMake(_indicatroLineView.frame.origin.x, _indicatroLineView.frame.origin.y, _indicatorLineWidth, _indicatroLineView.bounds.size.height);
         _indicatroLineView.frame = frame;
+        _indicatroLineView.backgroundColor = self.indicatorLineColor;
     }
     _indicatroLineView.hidden = !_showIndicatorLineView;
    
@@ -93,7 +94,7 @@
     IndexIndicatorCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IndexIndicatorCell" forIndexPath:indexPath];
     [cell realoadCellWith:self.index_arr[indexPath.item][@"title"] count:self.index_arr[indexPath.item][@"badge"]];
     cell.show_scale_animation = self.showAnmation;
-    cell.backgroundColor = RandomColor;
+
     return cell;
 }
 
@@ -129,6 +130,7 @@
     [self layoutIfNeeded];
     if (_index_arr.count > 0) {
         [self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForRow:scrollToIndex inSection:0]];
+        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:scrollToIndex inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
 }
 
@@ -164,7 +166,4 @@
     return _indicatroLineView;
 }
 
--(void)setIndicatorLineColor:(UIColor *)indicatorLineColor{
-    _indicatroLineView.backgroundColor = indicatorLineColor;
-}
 @end

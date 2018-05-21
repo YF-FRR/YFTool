@@ -28,7 +28,7 @@
     UILabel *titleLab = [UILabel new];
     [self addSubview:titleLab];
     [titleLab addLayoutConstraint:UIEdgeInsetsZero];
-    titleLab.textColor = [UIColor blackColor];
+    titleLab.textColor = [self colorWithHex:@"333333" alpha:1.0];
     titleLab.font = [UIFont systemFontOfSize:14];
     titleLab.textAlignment = NSTextAlignmentCenter;
     self.titleLab = titleLab;
@@ -42,12 +42,12 @@
         make.yf_mas_width = w;
         make.yf_mas_height = w;
     }];
-    countLab.textColor = [UIColor whiteColor];
-    countLab.font = [UIFont systemFontOfSize:10];
+    countLab.textColor = [self colorWithHex:@"333333" alpha:1.0];
+    countLab.font = [UIFont systemFontOfSize:15];
     countLab.textAlignment = NSTextAlignmentCenter;
     countLab.layer.cornerRadius = w/2.0;
     countLab.clipsToBounds = YES;
-    countLab.backgroundColor = [UIColor redColor];
+    countLab.backgroundColor = [self colorWithHex:@"f96720" alpha:1.0];
     self.countLab = countLab;
     
 }
@@ -74,16 +74,34 @@
                 self.titleLab.transform = CGAffineTransformMakeScale(1.3, 1.3);
             }];
         }
-        self.titleLab.textColor = [UIColor purpleColor];
+        self.titleLab.textColor = [self colorWithHex:@"f96720" alpha:1.0];
     }else{
         if (self.show_scale_animation) {
             [UIView animateWithDuration:0.25 animations:^{
                 self.titleLab.transform = CGAffineTransformIdentity;
             }];
         }
-        self.titleLab.textColor = [UIColor blackColor];
+        self.titleLab.textColor = [self colorWithHex:@"333333" alpha:1.0];
     }
 
+}
+
+- (UIColor *)colorWithHex:(NSString *)hexValue alpha:(CGFloat)alpha
+{
+    unsigned int red, green, blue;
+    NSRange range;
+    range.length =2;
+    range.location =0;
+    [[NSScanner scannerWithString:[hexValue substringWithRange:range]] scanHexInt:&red];
+    range.location =2;
+    [[NSScanner scannerWithString:[hexValue substringWithRange:range]] scanHexInt:&green];
+    range.location =4;
+    [[NSScanner scannerWithString:[hexValue substringWithRange:range]] scanHexInt:&blue];
+    
+    return [UIColor colorWithRed:(float)(red/255.0f)
+                           green:(float)(green/255.0f)
+                            blue:(float)(blue/255.0f)
+                           alpha:alpha];
 }
 
 @end
