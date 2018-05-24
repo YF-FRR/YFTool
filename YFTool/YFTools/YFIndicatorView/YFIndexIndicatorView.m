@@ -16,6 +16,7 @@
 }
 @property(nonatomic,weak)UICollectionView *collectionView;
 @property(nonatomic,strong)UIView *indicatroLineView;
+@property(nonatomic,assign)BOOL is_first;// 第一次加载
 @end
 
 @implementation YFIndexIndicatorView
@@ -52,7 +53,7 @@
     collectionView.showsHorizontalScrollIndicator = NO;
     [self addSubview:collectionView];
     self.collectionView = collectionView;
-  
+    self.is_first = YES;
 }
 
 -(void)layoutSubviews{
@@ -113,15 +114,19 @@
     if (self.showIndicatorLineView) {
         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
         CGPoint center = CGPointMake(cell.center.x , cell.height - IndicatorLineH);
-         __weak typeof(self) weakSelf=self;
-        [UIView animateWithDuration:0.25 animations:^{
-            if (weakSelf.indicatorLineAutoWidth) {
-                weakSelf.indicatroLineView.width = cell.width * 0.8;
-            }
-            weakSelf.indicatroLineView.center = center;
-        }];
+        if (self.is_first) {
+            self.is_first = NO;
+            self.indicatroLineView.center = center;
+        }else{
+            __weak typeof(self) weakSelf=self;
+            [UIView animateWithDuration:0.25 animations:^{
+                if (weakSelf.indicatorLineAutoWidth) {
+                    weakSelf.indicatroLineView.width = cell.width * 0.8;
+                }
+                weakSelf.indicatroLineView.center = center;
+            }];
+        }
     }
-
 }
 
 #pragma mark ====== Functions =======
