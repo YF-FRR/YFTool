@@ -19,8 +19,6 @@
 
 }
 
--(void)viewAppearToDoThing{
-    
-}
+-(void)viewAppearToDoThing{}
 
 @end

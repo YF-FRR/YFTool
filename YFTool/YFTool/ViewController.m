@@ -3,7 +3,7 @@
 //  YFTool
 //
 //  Created by ios_yangfei on 2018/4/20.
-//  Copyright © 2018年 jianghu3. All rights reserved.
+//  Copyright © 2018年 YF_Coder. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -22,7 +22,7 @@
 
 -(void)setUpView{
 
-    UITableView *tableView=[[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStyleGrouped];
     tableView.delegate=self;
     tableView.dataSource=self;
     [self.view addSubview:tableView];

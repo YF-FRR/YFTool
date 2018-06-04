@@ -3,7 +3,7 @@
 //  YFPageViewControllerVC
 //
 //  Created by ios_yangfei on 2017/12/19.
-//  Copyright © 2017年 jianghu3. All rights reserved.
+//  Copyright © 2017年 YF_Coder. All rights reserved.
 //
 
 #import "HeaderReusableView.h"

@@ -1,13 +1,13 @@
 //
-//  YFPickerViewVC.h
+//  UIScrollView+Extension.h
 //  YFTool
 //
-//  Created by ios_yangfei on 2018/4/23.
+//  Created by ios_yangfei on 2018/6/4.
 //  Copyright © 2018年 YF_Coder. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface YFPickerViewVC : UIViewController
+@interface UIScrollView (Extension)
 
 @end

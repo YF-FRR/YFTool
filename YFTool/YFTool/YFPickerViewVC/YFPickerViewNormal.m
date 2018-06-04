@@ -2,8 +2,8 @@
 //  ChooseTimeView.m
 //  JHWaiMaiUpdate
 //
-//  Created by jianghu3 on 16/6/30.
-//  Copyright © 2016年 jianghu2. All rights reserved.
+//  Created by YF_Coder on 16/6/30.
+//  Copyright © 2016年 YF_Coder2. All rights reserved.
 //
 
 #import "YFPickerViewNormal.h"
